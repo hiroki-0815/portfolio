@@ -20,7 +20,7 @@ export const HeroSection = () => {
             Hiroki Kusaka
           </h1>
           <p className="mt-4 px-5 py-4 z-50 text-center rounded-md text-white bg-slate-700 md:text-lg">
-            Hi, I'm Hiroki! I'm currently studying to become a software
+            Hi, I&#39;m Hiroki! I&#39;m currently studying to become a software
             engineer, with a strong focus on JavaScript and its ecosystem. I
             specialize in TypeScript for type safety and maintainability, React
             for building dynamic user interfaces, and Express.js for backend
