@@ -1,0 +1,26 @@
+{
+  "Hero": {
+    "name": "Hiroki Kusaka",
+    "altText": "Person peeking from behind laptop",
+    "description": "Hi, I'm Hiroki! I'm currently studying to become a software engineer, with a strong focus on JavaScript and its ecosystem. I specialize in TypeScript for type safety and maintainability, React for building dynamic user interfaces, and Express.js for backend development."
+  },
+  "Projects": {
+    "featuredProjects": "Featured Projects",
+    "aboutApp": "About this App",
+    "frontend": "Frontend",
+    "viewFrontendCode": "View Frontend Code",
+    "noFrontendCode": "No frontend code available",
+    "backend": "Backend",
+    "viewBackendCode": "View Backend Code",
+    "noBackendCode": "No backend code available",
+    "viewLiveSite": "View Live Site",
+    "languageExchangeApp": {
+      "title": "Language Exchange App",
+      "description": "This app is designed to help language learners connect with the right language partners. You can search for learners by filtering based on gender, learning language, and age. Once you find a match, you can chat or have video calls to practice and improve your language skills in real time."
+    },
+    "foodOrderingApp": {
+      "title": "Food Ordering App",
+      "description": "This app allows users to order food online seamlessly with real-time order tracking and a user-friendly interface."
+    }
+  }
+}
