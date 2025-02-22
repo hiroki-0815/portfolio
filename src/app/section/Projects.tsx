@@ -68,7 +68,7 @@ const ProjectsSection = () => {
   return (
     <section className="flex flex-col pb-16 lg:py-24" id="projects">
       <div className="items-center">
-        <h2 className="font-serif text-3xl text-white md:text-5xl mt-6 font-semibold">
+        <h2 className="font-serif text-3xl text-white md:text-5xl mt-2 font-semibold">
           {t("featuredProjects")}
         </h2>
       </div>
@@ -96,9 +96,8 @@ const ProjectsSection = () => {
 
               <hr className="border-t-2 my-4 lg:my-6 border-white/5" />
 
-              <div className="flex gap-2">
-                {/* Frontend Section */}
-                <div className="mb-4 px-6 py-4 rounded-md w-1/2 bg-slate-700">
+              <div className="flex flex-col md:flex-row gap-2">
+                <div className="mb-4 px-6 py-4 rounded-md md:w-1/2 bg-slate-700">
                   <div className="mb-4">
                     <div className="text-2xl font-bold mb-2">
                       {t("frontend")}
@@ -132,8 +131,7 @@ const ProjectsSection = () => {
                   </ul>
                 </div>
 
-                {/* Backend Section */}
-                <div className="mb-4 px-6 py-4 rounded-md w-1/2 bg-slate-700">
+                <div className="mb-4 px-6 py-4 rounded-md md:w-1/2 bg-slate-700">
                   <div className="mb-4">
                     <div className="text-2xl font-bold mb-2">
                       {t("backend")}

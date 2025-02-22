@@ -19,7 +19,7 @@ export const Header = () => {
   return (
     <div className="fixed top-3 left-1/2 transform -translate-x-1/2 z-10 px-6">
       {/* Navigation */}
-      <nav className="flex flex-row justify-center items-center gap-5 p-2 border w-[400px] text-white/80 border-white/15 rounded-full bg-white/10 backdrop-blur">
+      <nav className="flex flex-row justify-center text-sm md:text-base items-center gap-5 p-2 border w-[250px] md:w-[400px]  text-white/80 border-white/15 rounded-full bg-white/10 backdrop-blur">
         <Link href="#home" onClick={(e) => handleScrollToSection(e, "home")}>
           Home
         </Link>
