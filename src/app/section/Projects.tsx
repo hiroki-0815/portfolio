@@ -38,7 +38,7 @@ const portfolioProjects = [
     descriptionKey: "foodOrderingApp.description",
     frontendTools: [
       { frontendTool: "Typescript" },
-      { frontendTool: "Vue.js" },
+      { frontendTool: "React.js" },
       { frontendTool: "Tailwind CSS" },
       { frontendTool: "Shadcn" },
     ],
