@@ -14,7 +14,7 @@ const portfolioProjects = [
     descriptionKey: "languageExchangeApp.description",
     frontendTools: [
       { frontendTool: "Typescript" },
-      { frontendTool: "React.js" },
+      { frontendTool: "React" },
       { frontendTool: "Socket.io" },
       { frontendTool: "Tailwind CSS" },
       { frontendTool: "Shadcn" },
@@ -38,7 +38,7 @@ const portfolioProjects = [
     descriptionKey: "foodOrderingApp.description",
     frontendTools: [
       { frontendTool: "Typescript" },
-      { frontendTool: "React.js" },
+      { frontendTool: "React" },
       { frontendTool: "Tailwind CSS" },
       { frontendTool: "Shadcn" },
     ],
