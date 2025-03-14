@@ -2,7 +2,7 @@
   "Hero": {
     "name": "Hiroki Kusaka",
     "altText": "Person peeking from behind laptop",
-    "description": "I'm currently studying to become a software engineer, with a strong interest in JavaScript and its ecosystem. I'm actively developing applications using TypeScript and React for frontend development and Express.js for backend development.My strength is my ability to deeply immerse myself in whatever interests me. During my school days, I dedicated myself passionately to learning English, and now I'm fully engaged in programming. Once I start something, I commit fully, which is why I'm currently maintaining a daily routine of seven hours of programming practice.Thank you for your time—I look forward to connecting!"
+    "description": "I'm currently studying to become a software engineer, with a strong interest in JavaScript and its ecosystem. I'm actively developing applications using TypeScript and React for frontend development and Express.js for backend development.My strength is my ability to deeply immerse myself in whatever interests me. During my school days, I dedicated myself passionately to learning English, and now I'm fully engaged in programming. Once I start something, I commit fully, which is why I'm currently maintaining a daily routine of seven hours of programming practice.Thank you for your time. I look forward to connecting!"
   },
   "Projects": {
     "featuredProjects": "Featured Projects",
