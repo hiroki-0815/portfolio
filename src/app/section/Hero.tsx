@@ -31,7 +31,7 @@ export const HeroSection = () => {
           </li>
           <li>
             <div className="text-white text-[14px] rounded transition inline-block">
-              Gmail: hirokikusaka765@gmail.com
+              Email: hirokikusaka765@gmail.com
             </div>
           </li>
         </ul>
