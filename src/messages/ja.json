@@ -4,6 +4,10 @@
     "altText": "ノートパソコンの後ろから覗いている人",
     "description": "初めまして、日下浩輝と申します。現在、ソフトウェアエンジニアを目指して日々勉強しております。特にJavaScriptとそのエコシステムに強い関心を持ち、フロントエンドではTypeScriptとReact、バックエンドではExpress.jsを用いたアプリケーション開発に取り組んでいます。私の特技は、何かに熱中し徹底的に取り組むことです。学生時代は英語学習に情熱を注ぎ、現在はプログラミングに没頭しています。一度始めたことはとことん突き詰める性格で、現在は毎日7時間のプログラミング学習を継続しています。どうぞよろしくお願いいたします。"
   },
+  "Skills": {
+    "Skills":"スキル",
+    "mySkills": "React, Typescript, Next.js, Express.js, Node.js, HTML, CSS, Tailwind CSS, MongoDB, Redux, Docker"
+  },
   "Projects": {
     "featuredProjects": "プロジェクト",
     "aboutApp": "このアプリについて",
