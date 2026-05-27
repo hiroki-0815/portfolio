@@ -18,13 +18,23 @@
     "viewBackendCode": "View Backend Code",
     "noBackendCode": "No backend code available",
     "viewLiveSite": "View Live Site",
-    "languageExchangeApp": {
-      "title": "Language Exchange App",
-      "description": "This app is designed to help language learners connect with the right language partners. You can search for learners by filtering based on gender, learning language, and age. Once you find a match, you can chat or have video calls to practice and improve your language skills in real time."
-    },
-    "foodOrderingApp": {
-      "title": "Food Ordering App",
-      "description": "This app allows users to order food online seamlessly with real-time order tracking and a user-friendly interface."
+    "nativbaseApp": {
+      "title": "言語学習アプリ",
+      "description": "Nativbase is a desktop web app for language exchange. Its core features are random video calls and user search: users can join filtered random matching, connect through real-time video calls, and search language partners with list/map views, nearby sorting, active-user sorting, and video-call availability.",
+      "features": {
+        "randomVideoCall": {
+          "title": "Random Video Call",
+          "description": "Users can enter a random matching queue with filters and start a real-time video call once a compatible partner is found."
+        },
+        "search": {
+          "title": "Search Feature",
+          "description": "Users can search language partners with filters, switch between list and map views, and sort by nearby, active, or video-call-ready users."
+        },
+        "chat": {
+          "title": "Chat Feature",
+          "description": "Users can continue conversations through chat, keeping communication active before and after video calls."
+        }
+      }
     }
   }
 }

@@ -36,7 +36,7 @@ export const HeroSection = () => {
           </li>
         </ul>
         <div className="max-w-[900px] w-full flex flex-col items-center">
-          <div className="mt-6 w-full">
+          <div className="mt-6 w-full max-w-[420px]">
             <Image src={me} className="rounded-md w-full" alt={t("altText")} />
           </div>
           <p className="mt-4 px-5 py-4 text-center rounded-md text-white md:text-lg w-full">

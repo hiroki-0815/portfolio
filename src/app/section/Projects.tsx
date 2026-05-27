@@ -1,66 +1,149 @@
 "use client";
 
-import Image from "next/image";
-import { Check, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import Image, { type StaticImageData } from "next/image";
+import { Check, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import languageExchangeApp from "../assets/languageExchangeApp.png";
-import foodOrderingApp from "../assets/foodOrderingApp.png";
+import randomVideoCall from "../assets/random-video-call.png";
+import searchFeature from "../assets/search-feature.png";
+import chatFeature from "../assets/chat-feature.png";
 import Card from "../components/Card";
+
+type FeatureSlide = {
+  titleKey: string;
+  descriptionKey: string;
+  image: StaticImageData;
+};
 
 const portfolioProjects = [
   {
-    titleKey: "languageExchangeApp.title",
-    descriptionKey: "languageExchangeApp.description",
+    titleKey: "nativbaseApp.title",
+    descriptionKey: "nativbaseApp.description",
     frontendTools: [
       { frontendTool: "Typescript" },
+      { frontendTool: "Next.js" },
       { frontendTool: "React" },
       { frontendTool: "Socket.io" },
+      { frontendTool: "React Query" },
+      { frontendTool: "Zustand" },
+      { frontendTool: "Leaflet" },
       { frontendTool: "Tailwind CSS" },
-      { frontendTool: "Shadcn" },
-      { frontendTool: "Redux" },
     ],
     backendTools: [
       { backendTool: "Typescript" },
+      { backendTool: "Express.js" },
+      { backendTool: "MongoDB" },
       { backendTool: "Socket.io" },
-      { backendTool: "Express.js" },
-      { backendTool: "MongoDB" },
+      { backendTool: "Redis" },
+      { backendTool: "Twilio" },
+      { backendTool: "Stripe" },
+      { backendTool: "AWS S3" },
     ],
-    link: "https://langfy-frontend.onrender.com",
-    image: languageExchangeApp,
-    codeSrc: [
-      { frontend: "https://github.com/hiroki-0815/langfy-frontend" },
-      { backend: "https://github.com/hiroki-0815/langfy-backend" },
-    ],
-  },
-  {
-    titleKey: "foodOrderingApp.title",
-    descriptionKey: "foodOrderingApp.description",
-    frontendTools: [
-      { frontendTool: "Typescript" },
-      { frontendTool: "React" },
-      { frontendTool: "Tailwind CSS" },
-      { frontendTool: "Shadcn" },
-    ],
-    backendTools: [
-      { backendTool: "Typescript" },
-      { backendTool: "Express.js" },
-      { backendTool: "MongoDB" },
-    ],
-    link: "https://mern-food-ordering-app-frontend-09fm.onrender.com",
-    image: foodOrderingApp,
-    codeSrc: [
+    link: "https://nativbase.com/ja",
+    featureSlides: [
       {
-        frontend:
-          "https://github.com/hiroki-0815/mern-food-ordering-app-frontend",
+        titleKey: "nativbaseApp.features.randomVideoCall.title",
+        descriptionKey: "nativbaseApp.features.randomVideoCall.description",
+        image: randomVideoCall,
       },
       {
-        backend:
-          "https://github.com/hiroki-0815/mern-food-ordering-app-backend",
+        titleKey: "nativbaseApp.features.search.title",
+        descriptionKey: "nativbaseApp.features.search.description",
+        image: searchFeature,
       },
+      {
+        titleKey: "nativbaseApp.features.chat.title",
+        descriptionKey: "nativbaseApp.features.chat.description",
+        image: chatFeature,
+      },
+    ],
+    codeSrc: [
+      { frontend: "https://github.com/hiroki-0815/nativbase-frontend" },
+      { backend: "https://github.com/hiroki-0815/nativbase-backend" },
     ],
   },
 ];
+
+const ProjectFeatureSlideshow = ({ slides }: { slides: FeatureSlide[] }) => {
+  const t = useTranslations("Projects");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeSlide = slides[activeIndex];
+
+  const showPreviousSlide = () => {
+    setActiveIndex((currentIndex) =>
+      currentIndex === 0 ? slides.length - 1 : currentIndex - 1
+    );
+  };
+
+  const showNextSlide = () => {
+    setActiveIndex((currentIndex) =>
+      currentIndex === slides.length - 1 ? 0 : currentIndex + 1
+    );
+  };
+
+  return (
+    <div className="mb-6 overflow-hidden rounded-md bg-slate-900/70 ring-1 ring-white/10">
+      <div className="relative mx-auto aspect-[16/9] w-full max-w-[720px] bg-black">
+        <Image
+          src={activeSlide.image}
+          alt={t(activeSlide.titleKey)}
+          fill
+          sizes="(min-width: 1024px) 900px, 100vw"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="flex flex-col gap-4 px-5 py-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <div className="mb-1 text-xs uppercase tracking-[0.2em] text-green-300">
+            {activeIndex + 1} / {slides.length}
+          </div>
+          <h4 className="text-xl font-semibold text-white">
+            {t(activeSlide.titleKey)}
+          </h4>
+          <p className="mt-2 text-sm leading-6 text-emerald-100 md:text-base">
+            {t(activeSlide.descriptionKey)}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-4 md:self-end">
+          <button
+            type="button"
+            aria-label="Previous feature"
+            onClick={showPreviousSlide}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-green-200/70 bg-green-400 text-gray-950 shadow-lg shadow-green-950/30 transition hover:bg-green-300"
+          >
+            <ChevronLeft className="h-7 w-7" />
+          </button>
+          <div className="flex items-center gap-2.5">
+            {slides.map((slide, slideIndex) => (
+              <button
+                key={slide.titleKey}
+                type="button"
+                aria-label={`Show ${t(slide.titleKey)}`}
+                onClick={() => setActiveIndex(slideIndex)}
+                className={`h-3 rounded-full transition-all ${
+                  activeIndex === slideIndex
+                    ? "w-10 bg-green-400 shadow-md shadow-green-950/40"
+                    : "w-3 bg-white/45 hover:bg-white/70"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            aria-label="Next feature"
+            onClick={showNextSlide}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-green-200/70 bg-green-400 text-gray-950 shadow-lg shadow-green-950/30 transition hover:bg-green-300"
+          >
+            <ChevronRight className="h-7 w-7" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const ProjectsSection = () => {
   const t = useTranslations("Projects");
@@ -93,7 +176,21 @@ const ProjectsSection = () => {
                 </p>
               </div>
 
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex h-12 w-auto items-center justify-center rounded-md bg-green-400 px-6 font-semibold text-gray-950 shadow-lg shadow-green-950/30 transition hover:bg-green-300"
+                >
+                  <span>{t("viewLiveSite")}</span>
+                  <ArrowUpRight className="w-4 h-4 ml-2" />
+                </a>
+              )}
+
               <hr className="border-t-2 my-4 lg:my-6 border-white/5" />
+
+              <ProjectFeatureSlideshow slides={project.featureSlides} />
 
               <div className="flex flex-col md:flex-row gap-2">
                 <div className="mb-4 px-6 py-4 rounded-md md:w-1/2 bg-slate-700">
@@ -165,23 +262,6 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-gray-950 h-12 w-auto px-6 rounded-md font-semibold inline-flex items-center justify-center my-6 hover:opacity-75 transition-opacity duration-200"
-              >
-                <span>{t("viewLiveSite")}</span>
-                <ArrowUpRight className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-
-            <div className="relative justify-center items-center">
-              <Image
-                src={project.image}
-                alt={t(project.titleKey)}
-                className="mb-4 overflow-hidden object-cover rounded-md"
-              />
             </div>
           </div>
         </Card>
